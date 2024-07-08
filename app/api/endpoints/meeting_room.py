@@ -44,12 +44,15 @@ async def get_all_meeting_rooms(
     '/{meeting_room_id}',
     response_model=MeetingRoomDB,
     response_model_exclude_none=True,
+    # Это параметр роута.
+    dependencies=[Depends(current_superuser)],
 )
 async def partially_update_meeting_room(
         meeting_room_id: int,
         obj_in: MeetingRoomUpdate,
         session: AsyncSession = Depends(get_async_session),
-        dependencies=[Depends(current_superuser)],
+        # Не туда залетело.
+        # dependencies=[Depends(current_superuser)],
 ):
     meeting_room = await check_meeting_room_exists(
         meeting_room_id, session,
