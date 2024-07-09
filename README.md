@@ -29,8 +29,14 @@
     SQLALCHEMY_DATABASE_URL = "sqlite+aiosqlite:///./test.db"  # пример для SQLite
     ```
 
-5. Примените миграции для создания таблиц в базе данных:
-    ```sh
+5. Иницилизируйте _alembic_ и примените миграции для создания таблицы в базе данных:
+   ```sh
+    alembic init alembic
+    ```
+   ```sh
+    alembic revision --autogenerate -m "Add DATABASE"
+    ```
+   ```sh
     alembic upgrade head
     ```
 
@@ -41,7 +47,7 @@
     uvicorn app.main:app --reload
     ```
 
-2. Откройте браузер и перейдите по адресу [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) для просмотра документации Swagger.
+2. Откройте браузер и перейдите по адресу [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) для просмотра документации _Swagger_ или _Redoc_.
 
 ## Структура проекта
 
