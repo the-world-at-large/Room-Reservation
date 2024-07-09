@@ -126,4 +126,4 @@ room_reservation/
 - Alembic
 
 # Лицензия
-Этот проект лицензирован под MIT License.
+Этот проект лицензирован под **MIT** License.
