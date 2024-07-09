@@ -1,4 +1,3 @@
-# app/api/routers.py
 from fastapi import APIRouter
 
 from app.api.endpoints import (

@@ -21,7 +21,7 @@ router = APIRouter()
 async def create_reservation(
     reservation: ReservationCreate,
     session: AsyncSession = Depends(get_async_session),
-    user: User = Depends(current_user)
+    user: User = Depends(current_user),
 ):
     await check_meeting_room_exists(
         reservation.meetingroom_id, session,
@@ -93,7 +93,7 @@ async def delete_reservation(
         session: AsyncSession = Depends(get_async_session),
         user: User = Depends(current_user),
 ):
-    """Для суперъюзеров или создателей обхекта бронирования."""
+    """Для суперъюзеров или создателей объекта бронирования."""
     reservation = await check_reservation_before_edit(
         reservation_id, session, user,
     )
